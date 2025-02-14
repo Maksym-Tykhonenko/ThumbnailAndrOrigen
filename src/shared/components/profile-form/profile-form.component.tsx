@@ -69,6 +69,7 @@ export const ProfileForm = () => {
               name="lastName"
             />
 
+            {/** 
             <View style={styles.rowInputsContainer}>
               <Controller
                 control={control}
@@ -90,7 +91,7 @@ export const ProfileForm = () => {
                 onSelect={handleSelect}
                 title="Gender"
               />
-            </View>
+            </View>*/}
           </View>
           <View style={styles.inputsBtnContainer}>
             <Pressable
