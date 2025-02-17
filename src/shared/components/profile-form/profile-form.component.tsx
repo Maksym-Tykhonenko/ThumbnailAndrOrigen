@@ -69,29 +69,7 @@ export const ProfileForm = () => {
               name="lastName"
             />
 
-            {/** 
-            <View style={styles.rowInputsContainer}>
-              <Controller
-                control={control}
-                render={({ field: { onChange, value } }) => (
-                  <Input
-                    label="Date of Birth"
-                    value={value}
-                    onChange={onChange}
-                    keyBoardType="number-pad"
-                    containerStyles={{ width: inputWidth }}
-                    placeholder="DD/MM/YY"
-                  />
-                )}
-                name="birthDate"
-              />
-              <Select
-                selectedValue={gender}
-                width={inputWidth}
-                onSelect={handleSelect}
-                title="Gender"
-              />
-            </View>*/}
+            
           </View>
           <View style={styles.inputsBtnContainer}>
             <Pressable

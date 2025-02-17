@@ -30,8 +30,10 @@ type QuizGameScreenProps = NativeStackScreenProps<
 >;
 
 export const QuizGameScreen = ({ navigation }: QuizGameScreenProps) => {
-  const headerHeight = 90;
-  const PAGE_WIDTH = Dimensions.get('window').width - 48;
+  const paddingBottom = useBottomTabBarHeight();
+
+  const width = Dimensions.get('window').width;
+  const PAGE_WIDTH = width - 48;
   const PAGE_HEIGHT = 560;
   const ref = React.useRef<ICarouselInstance>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<{
@@ -111,11 +113,10 @@ export const QuizGameScreen = ({ navigation }: QuizGameScreenProps) => {
     },
     [PAGE_HEIGHT, PAGE_WIDTH, selectedValue],
   );
-  const paddingBottom = useBottomTabBarHeight();
 
   return (
     <LightContainer>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.container, { paddingBottom }]}>
           <Header
             score={true}
@@ -131,7 +132,7 @@ export const QuizGameScreen = ({ navigation }: QuizGameScreenProps) => {
             >
               <Carousel
                 ref={ref}
-                enabled={true}
+                enabled={false}
                 loop={false}
                 width={PAGE_WIDTH}
                 height={445}
