@@ -1,4 +1,4 @@
-import { Image, Text, View } from 'react-native';
+import { Image, ImageBackground, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '~/modules/screens/welcome/welcome.styles';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -13,22 +13,19 @@ export const WelcomeScreen = () => {
   const handleStarted = () => {
     setIsOpened(true);
   };
-
-  return (
-    <LinearGradient
-      colors={COLORS.darkGradient}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
-      style={styles.gradient}
-    >
-      <SafeAreaView style={styles.outerContainer}>
-        <BlinkLogo style={styles.logo} />
+{/**
+   <BlinkLogo style={styles.logo} />
         <Image
           source={require('./../../../../assets/images/bubble.png')}
           style={styles.image}
         />
-        <View style={[styles.innerContainer, { paddingBottom: 20 }]}>
-          <View>
+  <LinearGradient
+      colors={COLORS.darkGradient}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+      style={styles.gradient}
+    ></LinearGradient>
+    <View>
             <Text style={styles.heading}>Pop Balls, Beat the Clock!</Text>
             <Text style={styles.text}>
               Blink is a simple yet addictive arcade game that tests your speed
@@ -36,9 +33,20 @@ export const WelcomeScreen = () => {
               to score big.{' '}
             </Text>
           </View>
+  */}
+  return (
+    <View style={{flex:1}}>
+      <ImageBackground style={{flex:1}} source={require('../../../../assets/new/screen3.jpg')}>
+        <SafeAreaView style={styles.outerContainer}>
+       
+        <View style={[styles.innerContainer, { paddingBottom: 20 }]}>
+          
           <Button text="Get started" option="accent" onPress={handleStarted} />
         </View>
       </SafeAreaView>
-    </LinearGradient>
+      </ImageBackground>
+    </View>
+      
+    
   );
 };

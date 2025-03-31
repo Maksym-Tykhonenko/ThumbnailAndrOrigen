@@ -1,4 +1,4 @@
-import { Dimensions, Pressable, ScrollView, Text, View } from 'react-native';
+import { Dimensions, ImageBackground, Pressable, ScrollView, Text, View } from 'react-native';
 import { styles } from '~/modules/screens/home/main/home-main.styles';
 import { BonusComponent } from '~/shared/components/bonus/bonus.component';
 import { GameBtn } from '~/shared/components/ui/game-btn/game-btn.component';
@@ -37,9 +37,11 @@ export const HomeMainScreen = () => {
   };
   const paddingBottom = useBottomTabBarHeight();
   return (
-    <LightContainer>
+    <View style={{flex:1}}>
+      <ImageBackground  style={{flex:1}} source={require('../../../../../assets/new/screen3.jpg')}>
+        
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={[styles.container, { paddingBottom: bottomPadding }]}>
+        <View style={[styles.container, { paddingBottom: bottomPadding, marginHorizontal:10 }]}>
           <Header />
           <View style={[styles.contentContainer, { paddingBottom }]}>
             <BonusComponent />
@@ -105,6 +107,9 @@ export const HomeMainScreen = () => {
           </View>
         </Alert>
       </ScrollView>
-    </LightContainer>
+    
+      </ImageBackground>
+    </View>
+    
   );
 };

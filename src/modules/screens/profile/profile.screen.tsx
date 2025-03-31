@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View ,ImageBackground} from "react-native";
 import { Header } from "~/shared/components/header/header.component";
 import { styles } from "~/modules/screens/profile/profile.styles";
 import { ProfileForm } from "~/shared/components/profile-form/profile-form.component";
@@ -10,7 +10,9 @@ export const ProfileScreen = () => {
   const bottomPadding = useBottomTabBarHeight();
 
   return (
-    <LightContainer>
+    <View style={{flex:1}}>
+      <ImageBackground  style={{flex:1}} source={require('../../../../assets/new/screen3.jpg')}>
+      
       <KeyboardAwareScrollView
         style={{ flex: 1 }}
         showsVerticalScrollIndicator={false}
@@ -21,6 +23,8 @@ export const ProfileScreen = () => {
           <ProfileForm />
         </View>
       </KeyboardAwareScrollView>
-    </LightContainer>
+      </ImageBackground>
+    </View>
+   
   );
 };

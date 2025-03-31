@@ -24,9 +24,9 @@ export const Header = ({
   const scoreCount = useGameStore((state) => state.score);
 
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container, marginTop:50, }}>
       {logo ? (
-        <BlinkLogo />
+        <></>
       ) : (
         <OutlineBtn
           Icon={<BackIcon width={10} height={18} />}

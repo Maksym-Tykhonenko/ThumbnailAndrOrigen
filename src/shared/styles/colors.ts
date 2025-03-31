@@ -9,4 +9,5 @@ export const COLORS = Object.freeze({
   activeBtn: "#9F047B",
   darkGradient: ["#1A387F", "#601386"],
   lightGradient: ["#A6C0FF", "#601386"],
+  transparentLight:[ 'transparent', 'transparent']
 });

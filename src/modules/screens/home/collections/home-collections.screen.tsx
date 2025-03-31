@@ -51,6 +51,8 @@ export const HomeCollectionsScreen = ({
     });
   };
   const paddingBottom = useBottomTabBarHeight();
+
+  
   return (
     <LightContainer>
       <ScrollView showsVerticalScrollIndicator={false}>

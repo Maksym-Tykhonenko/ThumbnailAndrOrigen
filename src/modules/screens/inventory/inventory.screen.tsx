@@ -1,4 +1,4 @@
-import { Dimensions, FlatList, ScrollView, Text, View } from "react-native";
+import { Dimensions, FlatList, ScrollView, Text, View,ImageBackground } from "react-native";
 import { LightContainer } from "~/shared/components/ui/light-container/light-container.component";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { Header } from "~/shared/components/header/header.component";
@@ -54,12 +54,13 @@ type InventoryItemProps = {
 };
 const InventoryItem = ({ Icon, isOpened }: InventoryItemProps) => {
   const width = Dimensions.get("window").width / 2 - 32;
+  
   return (
     <LinearGradient
       colors={COLORS.darkGradient}
       style={[styles.itemContainer, { width: width }]}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
+      start={{  }}
+      end={{  }}
     >
       {!isOpened && <BlurView intensity={20} style={styles.blur} />}
       {isOpened ? Icon : <LockIcon />}
@@ -70,7 +71,8 @@ const InventoryItem = ({ Icon, isOpened }: InventoryItemProps) => {
 export const InventoryScreen = () => {
   const bottomPadding = useBottomTabBarHeight();
   return (
-    <LightContainer>
+    <View style={{flex:1}}>
+          <ImageBackground  style={{flex:1}} source={require('../../../../assets/new/screen3.jpg')}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.container, { paddingBottom: bottomPadding }]}>
           <Header />
@@ -91,6 +93,7 @@ export const InventoryScreen = () => {
           </View>
         </View>
       </ScrollView>
-    </LightContainer>
+      </ImageBackground>
+      </View>
   );
 };
