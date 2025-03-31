@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Dimensions, Animated } from 'react-native';
+import { View, Text, Dimensions, Animated,ImageBackground } from 'react-native';
 import { LightContainer } from '~/shared/components/ui/light-container/light-container.component';
 import { Header } from '~/shared/components/header/header.component';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -168,7 +168,8 @@ export const HomeGameScreen = ({ navigation }: HomeGameScreenProps) => {
   };
 
   return (
-    <LightContainer>
+    <View style={{ flex: 1 }}>
+      <ImageBackground   style={{flex:1}} source={require('../../../../../assets/new/screen3.jpg')}>
       <View style={styles.container}>
         <Header
           goBack={() => navigation.goBack()}
@@ -248,6 +249,7 @@ export const HomeGameScreen = ({ navigation }: HomeGameScreenProps) => {
           </Text>
         </View>
       </View>
-    </LightContainer>
+</ImageBackground>
+    </View>
   );
 };

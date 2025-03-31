@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dimensions, Text, View, Pressable, ScrollView } from 'react-native';
+import { Dimensions, Text, View, Pressable, ScrollView, ImageBackground } from 'react-native';
 import Animated, { FadeInDown, interpolate } from 'react-native-reanimated';
 import Carousel, {
   ICarouselInstance,
@@ -113,10 +113,12 @@ export const QuizGameScreen = ({ navigation }: QuizGameScreenProps) => {
     },
     [PAGE_HEIGHT, PAGE_WIDTH, selectedValue],
   );
-
+  {/** <LightContainer> </LightContainer>*/}
+ 
   return (
-    <LightContainer>
-      <ScrollView showsVerticalScrollIndicator={false}>
+   <View style={{flex:1}}>
+      <ImageBackground style={{flex:1}} source={require('../../../../../assets/new/screen3.jpg')}>
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.container, { paddingBottom }]}>
           <Header
             score={true}
@@ -182,7 +184,10 @@ export const QuizGameScreen = ({ navigation }: QuizGameScreenProps) => {
           </View>
         </Alert>
       </ScrollView>
-    </LightContainer>
+      </ImageBackground>
+   </View>
+      
+   
   );
 };
 
